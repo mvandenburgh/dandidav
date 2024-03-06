@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - heroku-deployment
 
 jobs:
   auto-release:
