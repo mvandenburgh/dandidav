@@ -1,4 +1,3 @@
-test
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![CI Status](https://github.com/dandi/dandidav/actions/workflows/test.yml/badge.svg)](https://github.com/dandi/dandidav/actions/workflows/test.yml)
 [![codecov.io](https://codecov.io/gh/dandi/dandidav/branch/main/graph/badge.svg)](https://codecov.io/gh/dandi/dandidav)
