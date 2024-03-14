@@ -3,7 +3,7 @@ name: Deploy `dandidav` to Heroku
 on:
   push:
     branches:
-      - main
+      - test-deployment
 
 concurrency:
   # If this workflow is already running, cancel it to avoid a scenario
@@ -19,7 +19,7 @@ jobs:
   deploy:
     name: Deploy to Heroku
     runs-on: ubuntu-latest
-    if: "github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release')"
+    # if: "github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release')"
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +37,7 @@ jobs:
         run: heroku plugins:install heroku-builds
 
       - name: Create Heroku Build
-        run: heroku builds:create --app dandidav
+        run: heroku builds:create --app dandidav target/release/dandidav
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
